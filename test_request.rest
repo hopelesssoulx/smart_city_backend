@@ -1,0 +1,8 @@
+###
+get http://127.0.0.1:3001/
+
+
+
+
+###
+get http://127.0.0.1:3001/news/getNewsList
