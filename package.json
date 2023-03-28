@@ -1,0 +1,19 @@
+{
+  "name": "smart_city_backend",
+  "version": "0.0.1",
+  "description": "smart_city_backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hopelesssoulx/smart_city_backend.git"
+  },
+  "author": "rhymio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hopelesssoulx/smart_city_backend/issues"
+  },
+  "homepage": "https://github.com/hopelesssoulx/smart_city_backend#readme"
+}
