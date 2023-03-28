@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hopelesssoulx/smart_city_backend/issues"
   },
-  "homepage": "https://github.com/hopelesssoulx/smart_city_backend#readme"
+  "homepage": "https://github.com/hopelesssoulx/smart_city_backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
