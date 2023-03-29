@@ -5,7 +5,7 @@ get http://127.0.0.1:3001/
 
 
 ###
-get http://127.0.0.1:3001/api/news/getNewsList
+get http://127.0.0.1:3001/api/news/getNewsList?title=
 
 
 ###
@@ -13,7 +13,7 @@ get http://127.0.0.1:3001/api/news/getNewsCategory
 
 
 ###
-get http://127.0.0.1:3001/api/news/getNewsDetail/1
+get http://127.0.0.1:3001/api/news/getNewsDetail/68
 
 
 

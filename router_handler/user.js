@@ -3,8 +3,6 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const jwtConfig = require('../jwt_config')
 
-needTotal = false
-
 
 // 注册
 exports.register = (req, res) => {

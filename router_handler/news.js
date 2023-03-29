@@ -1,12 +1,13 @@
 const db = require('../db/index')
 
 
-const needTotal = true
-
-
 // 获取新闻列表
 exports.getNewsList = (req, res) => {
-    const sql = 'select id, title, subtitle, cover from news_list'
+    let sql;
+    if (req.query.title)
+        sql = 'select id, title, subtitle, cover from news_list where title like ' + `'%${req.query.title}%'`
+    else
+        sql = 'select id, title, subtitle, cover from news_list'
     db.query(sql, (e, rs) => {
         if (e) return res.cc(e)
 
