@@ -5,4 +5,63 @@ get http://127.0.0.1:3001/
 
 
 ###
-get http://127.0.0.1:3001/news/getNewsList
+get http://127.0.0.1:3001/api/news/getNewsList
+
+
+###
+get http://127.0.0.1:3001/api/news/getNewsCategory
+
+
+###
+get http://127.0.0.1:3001/api/news/getNewsDetail/1
+
+
+
+
+###
+get http://127.0.0.1:3001/api/guidePage/getGuidePageCarouselImages
+
+
+
+
+### 
+post http://127.0.0.1:3001/api/user/register
+Content-Type: application/json
+
+{
+    "username": "user3",
+    "password": "333333"
+}
+
+
+###
+# @name login
+post http://127.0.0.1:3001/api/user/login
+Content-Type: application/json
+
+{
+    "username": "user3",
+    "password": "333333"
+}
+
+
+###
+get http://127.0.0.1:3001/api/user/getUserInfo
+Content-Type: application/json
+Authorization: {{token}}
+
+
+###
+post http://127.0.0.1:3001/api/user/updateUserPassword
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "oldPassword": "bababa",
+    "newPassword": "333333"
+}
+
+
+
+### variables
+@token = {{login.response.body.token}}

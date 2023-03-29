@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/hopelesssoulx/smart_city_backend#readme",
   "dependencies": {
+    "@escook/express-joi": "^1.1.1",
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.0",
     "mysql": "^2.18.1"
   }
 }
