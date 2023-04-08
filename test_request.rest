@@ -5,7 +5,11 @@ get http://127.0.0.1:3001/
 
 
 ###
-get http://127.0.0.1:3001/api/news/getNewsList?title=
+get http://127.0.0.1:3001/api/news/getNewsList
+###
+get http://127.0.0.1:3001/api/news/getNewsList?title=世界
+###
+get http://127.0.0.1:3001/api/news/getNewsList?type=9
 
 
 ###
@@ -16,6 +20,20 @@ get http://127.0.0.1:3001/api/news/getNewsCategory
 get http://127.0.0.1:3001/api/news/getNewsDetail/68
 
 
+###
+post http://127.0.0.1:3001/api/news/newsPub
+Content-Type: application/json
+Authorization: {{token}}
+
+
+###
+post http://127.0.0.1:3001/api/news/newsDel
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "id": 85
+}
 
 
 ###
@@ -57,8 +75,8 @@ Content-Type: application/json
 Authorization: {{token}}
 
 {
-    "oldPassword": "bababa",
-    "newPassword": "333333"
+    "oldPassword": "abaaba",
+    "newPassword": "444444"
 }
 
 

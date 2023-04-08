@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db")
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const jwtConfig = require('../jwt_config')
@@ -34,11 +34,13 @@ exports.login = (req, res) => {
     const sql = 'select * from users where username=?'
     db.query(sql, req.body.username, (e, rs) => {
         if (e) return res.cc(e)
-        if (rs.length !== 1) res.cc(e)
+        if (rs.length !== 1) return res.cc('用户不存在')
         if (!bcrypt.compareSync(req.body.password, rs[0].password)) return res.cc('用户名或密码错误')
 
         return res.send({
             code: 200,
+            msg: '登录成功',
+            user_type: rs[0].user_type,
             token: 'Bearer ' + jwt.sign(
                 { ...rs[0], password: '' },         // req.auth
                 jwtConfig.jwtKey,
@@ -50,7 +52,7 @@ exports.login = (req, res) => {
 
 // 获取个人信息
 exports.getUserInfo = (req, res) => {
-    const sql = 'select username, email from users where username=?'
+    const sql = 'select username, email, user_type from users where username=?'
     db.query(sql, req.auth.username, (e, rs) => {
         if (e) return res.cc(e)
         if (rs.length !== 1) return res.cc('用户不存在')

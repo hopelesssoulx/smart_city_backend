@@ -9,4 +9,4 @@ const guidePageHandler = require('../router_handler/guide_page')
 router.get('/getGuidePageCarouselImages', guidePageHandler.getGuidePageCarouselImages)
 
 
-module.exports = router;
+module.exports = router
