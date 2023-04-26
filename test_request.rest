@@ -47,15 +47,25 @@ get http://127.0.0.1:3001/api/carousel/getPic/e614cb7f-63b0-4cda-bf47-db286ea1b0
 
 ###
 post http://127.0.0.1:3001/api/carousel/uploadImages
+Authorization: {{token}}
+
+###
+post http://127.0.0.1:3001/api/carousel/deleteImages
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "id": 2
+}
 
 ### 
 post http://127.0.0.1:3001/api/user/register
 Content-Type: application/json
 
-{
-    "username": "user3",
-    "password": "333333"
-}
+# {
+#     "username": "user3",
+#     "password": "333333"
+# }
 
 
 ###

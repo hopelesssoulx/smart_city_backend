@@ -20,5 +20,8 @@ const upload = multer({
 });
 router.post('/uploadImages', upload.single("image"), carouselHandler.uploadImages)
 
+// 删除首页轮播图图片
+router.post('/deleteImages', carouselHandler.deleteImages)
+
 
 module.exports = router

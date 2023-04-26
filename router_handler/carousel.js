@@ -4,7 +4,7 @@ const db = require('../db/index')
 
 // 获取首页轮播图地址
 exports.getCarouselImages = (req, res) => {
-    const sql = 'select * from carousel'
+    const sql = 'select * from carousel where status=1'
     db.query(sql, (e, rs) => {
         if (e) return res.cc(e)
 
@@ -86,5 +86,31 @@ exports.uploadImages = (req, res) => {
                     .end("Only .jpg & .png files are allowed!");
             });
         }
+    }
+}
+
+// 删除首页轮播图图片
+exports.deleteImages = (req, res) => {
+    let sql;
+    sql = 'select user_type from users where username=?'
+    db.query(sql, req.auth.username, (e, rs) => {
+        if (e) return res.cc(e)
+        if (rs.length === 0) return res.cc('用户不存在')
+        if (rs[0].user_type !== 1) return res.cc('无删除权限')
+
+        del()
+    })
+
+    const del = () => {
+        sql = 'update carousel set status=-1 where id=?'
+        db.query(sql, req.body.id, (e, rs) => {
+            if (e) return res.cc(e)
+            if (rs.affectedRows !== 1) return res.cc(e)
+
+            return res.send({
+                status: 200,
+                msg: '删除首页轮播图成功'
+            })
+        })
     }
 }
