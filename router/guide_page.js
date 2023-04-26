@@ -5,7 +5,7 @@ const router = express.Router()
 const guidePageHandler = require('../router_handler/guide_page')
 
 
-// 获取轮播图
+// 获取引导页轮播图
 router.get('/getGuidePageCarouselImages', guidePageHandler.getGuidePageCarouselImages)
 
 

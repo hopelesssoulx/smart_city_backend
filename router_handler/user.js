@@ -22,7 +22,8 @@ exports.register = (req, res) => {
                 if (rs.affectedRows !== 1) return res.cc(e)
 
                 return res.send({
-                    code: 200
+                    code: 200,
+                    msg: '注册成功'
                 })
             }
         )
@@ -59,6 +60,7 @@ exports.getUserInfo = (req, res) => {
 
         return res.send({
             code: 200,
+            msg: '获取个人信息成功',
             data: rs
         })
     })
@@ -81,7 +83,8 @@ exports.updateUserPassword = (req, res) => {
                 if (e) return res.cc(e)
 
                 return res.send({
-                    code: 200
+                    code: 200,
+                    msg: '更新密码成功'
                 })
             }
         )

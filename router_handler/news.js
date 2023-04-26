@@ -13,6 +13,7 @@ exports.getNewsList = (req, res) => {
 
         return res.send({
             status: 200,
+            msg: '获取新闻列表成功',
             total: rs.length,
             data: rs
         })
@@ -27,6 +28,7 @@ exports.getDeletedNewsList = (req, res) => {
 
         return res.send({
             status: 200,
+            msg: '获取已删除新闻列表成功',
             total: rs.length,
             data: rs
         })
@@ -41,6 +43,7 @@ exports.getNewsCategory = (req, res) => {
 
         return res.send({
             status: 200,
+            msg: '获取新闻分类成功',
             total: rs.length,
             data: rs
         })
@@ -55,6 +58,7 @@ exports.getNewsDetail = (req, res) => {
 
         return res.send({
             status: 200,
+            msg: '获取新闻详情成功',
             data: rs
         })
     })

@@ -8,6 +8,7 @@ exports.getGuidePageCarouselImages = (req, res) => {
 
         return res.send({
             status: 200,
+            msg: '获取引导页轮播图成功',
             total: rs.length,
             data: rs
         })
