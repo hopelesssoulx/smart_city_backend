@@ -16,7 +16,7 @@ router.get('/getImages/*', carouselHandler.getImages)
 
 // 上传首页轮播图图片
 const upload = multer({
-    dest: "./public/images/uploadsTemp/"
+    dest: "./assets/images/uploadsTemp/"
 });
 router.post('/uploadImages', upload.single("image"), carouselHandler.uploadImages)
 

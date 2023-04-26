@@ -44,7 +44,8 @@ app.use(expressJWT({ secret: jwtConfig.jwtKey, algorithms: ['HS256'] })
             /^\/api\/news\/getNewsCategory/,
             /^\/api\/news\/getNewsDetail/,
             /^\/api\/guidePage/,
-            /^\/api\/carousel/
+            /^\/api\/carousel\/getCarouselImages/,
+            /^\/api\/carousel\/getImages\/*/,
         ]
     }))
 
