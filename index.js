@@ -43,17 +43,21 @@ app.use(expressJWT({ secret: jwtConfig.jwtKey, algorithms: ['HS256'] })
             /^\/api\/news\/getDeletedNewsList/,
             /^\/api\/news\/getNewsCategory/,
             /^\/api\/news\/getNewsDetail/,
-            /^\/api\/guidePage/
+            /^\/api\/guidePage/,
+            /^\/api\/carousel/
         ]
     }))
 
 
 const guidePageRouter = require('./router/guide_page')
 app.use('/api/guidePage', guidePageRouter)
+const carouselRouter = require('./router/carousel')
+app.use('/api/carousel', carouselRouter)
 const newsRouter = require('./router/news')
 app.use('/api/news', newsRouter)
 const userRouter = require('./router/user')
 app.use('/api/user', userRouter)
+
 
 
 app.listen(3001, function () {

@@ -32,15 +32,21 @@ Content-Type: application/json
 Authorization: {{token}}
 
 {
-    "id": 85
+    "id": 100
 }
 
 
 ###
 get http://127.0.0.1:3001/api/guidePage/getGuidePageCarouselImages
 
+###
+get http://127.0.0.1:3001/api/carousel/getCarouselImages
 
+###
+get http://127.0.0.1:3001/api/carousel/getPic/e614cb7f-63b0-4cda-bf47-db286ea1b074
 
+###
+post http://127.0.0.1:3001/api/carousel/uploadImages
 
 ### 
 post http://127.0.0.1:3001/api/user/register
