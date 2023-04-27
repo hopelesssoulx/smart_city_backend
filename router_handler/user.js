@@ -41,6 +41,7 @@ exports.login = (req, res) => {
         return res.send({
             code: 200,
             msg: '登录成功',
+            username: rs[0].username,
             user_type: rs[0].user_type,
             token: 'Bearer ' + jwt.sign(
                 { ...rs[0], password: '' },         // req.auth
