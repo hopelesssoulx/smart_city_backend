@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model carousel {
+  id     Int     @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  image  String? @db.MediumText
+  status Int     @default(1)
+}
+
+model guide_page {
+  id    Int     @id @unique(map: "id_UNIQUE")
+  image String? @db.MediumText
+}
+
+model news_category {
+  id            Int    @id @unique(map: "id_UNIQUE") @default(-1)
+  news_category String @unique(map: "news_categorycol_UNIQUE") @default("default category") @db.VarChar(255)
+}
+
+model news_list {
+  id       Int     @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  title    String? @default("default title") @db.VarChar(255)
+  subtitle String? @default("default subtitle") @db.VarChar(255)
+  content  String? @db.MediumText
+  cover    String? @db.MediumText
+  type     Int?    @default(-1)
+  pub_date String? @default("default pubdate") @db.VarChar(255)
+  status   Int     @default(1)
+}
+
+model users {
+  id        Int     @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  username  String  @unique(map: "username_UNIQUE") @db.VarChar(255)
+  password  String  @db.VarChar(255)
+  email     String? @default("") @db.VarChar(255)
+  avatar    String? @db.MediumText
+  user_type Int     @default(0)
+}
