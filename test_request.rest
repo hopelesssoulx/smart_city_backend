@@ -96,6 +96,15 @@ Authorization: {{token}}
 }
 
 
+###
+post http://127.0.0.1:3001/api/chat/postChat
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "msg": "abaaba"
+}
+
 
 ### variables
 @token = {{login.response.body.token}}

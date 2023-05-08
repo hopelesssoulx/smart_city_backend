@@ -46,6 +46,8 @@ app.use(expressJWT({ secret: jwtConfig.jwtKey, algorithms: ['HS256'] })
             /^\/api\/guidePage/,
             /^\/api\/carousel\/getCarouselImages/,
             /^\/api\/carousel\/getImages\/*/,
+            // /^\/api\/chat\/chat/,
+            // /^\/api\/chat\/getChat/,
         ]
     }))
 
@@ -58,7 +60,8 @@ const newsRouter = require('./router/news')
 app.use('/api/news', newsRouter)
 const userRouter = require('./router/user')
 app.use('/api/user', userRouter)
-
+const chatRouter = require('./router/chat')
+app.use('/api/chat', chatRouter)
 
 
 app.listen(3001, function () {
