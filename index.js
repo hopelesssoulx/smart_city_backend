@@ -48,6 +48,7 @@ app.use(expressJWT({ secret: jwtConfig.jwtKey, algorithms: ['HS256'] })
             /^\/api\/carousel\/getImages\/*/,
             // /^\/api\/chat\/chat/,
             // /^\/api\/chat\/getChat/,
+            /^\/api\/user\/getAvatar\/*/,
         ]
     }))
 

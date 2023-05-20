@@ -3,11 +3,11 @@ const db = require('../db/index')
 
 // 获取新闻列表
 exports.getNewsList = (req, res) => {
-    let sql = 'select id, title, subtitle, cover from news_list where status=1 order by id desc'
+    let sql = 'select id, title, subtitle, type, pub_date, cover from news_list where status=1 order by id desc'
     if (req.query.title)
-        sql = 'select id, title, subtitle, cover from news_list where title like ' + `'%${req.query.title}%'` + ' and status=1 order by id desc'
+        sql = 'select id, title, subtitle, type, pub_date, cover from news_list where title like ' + `'%${req.query.title}%'` + ' and status=1 order by id desc'
     if (req.query.type)
-        sql = 'select id, title, subtitle, cover from news_list where type=' + `'${req.query.type}'` + ' and status=1 order by id desc'
+        sql = 'select id, title, subtitle, type, pub_date, cover from news_list where type=' + `'${req.query.type}'` + ' and status=1 order by id desc'
     db.query(sql, (e, rs) => {
         if (e) return res.cc(e)
 

@@ -74,8 +74,8 @@ post http://127.0.0.1:3001/api/user/login
 Content-Type: application/json
 
 {
-    "username": "user3",
-    "password": "333333"
+    "username": "user4",
+    "password": "444444"
 }
 
 
@@ -95,6 +95,15 @@ Authorization: {{token}}
     "newPassword": "444444"
 }
 
+###
+post http://127.0.0.1:3001/api/user/updateUserInfo
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "email": "abaaba",
+    "avatar": "444444"
+}
 
 ###
 post http://127.0.0.1:3001/api/chat/postChat
