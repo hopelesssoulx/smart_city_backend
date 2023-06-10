@@ -18,7 +18,8 @@ exports.register = (req, res) => {
         db.query(
             sql2, {
             username: req.body.username,
-            password: bcrypt.hashSync(req.body.password, 10)
+            password: bcrypt.hashSync(req.body.password, 10),
+            email: req.body.username + '@smartCity.com'
         },
             (e, rs) => {
                 if (e) return res.cc(e)

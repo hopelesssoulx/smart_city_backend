@@ -25,7 +25,7 @@ exports.getChat = async (req, res) => {
         connections.shift()
     }, 1000 * 60 * 60);
 
-    res.write("data: " + "chat init" + "\n\n")
+    res.write("data: " + "server: chat init" + "\n\n")
 
     req.on("close", () => { })
 };
@@ -33,7 +33,7 @@ exports.getChat = async (req, res) => {
 // 发送
 exports.postChat = async (req, res) => {
     connections.forEach((i) => {
-        i.res.write('data: ' + `${req.body.msg}` + '\n\n')
+        i.res.write('data: ' + `${req.auth.username + ': ' + req.body.msg}` + '\n\n')
     })
 
     return res.send({
